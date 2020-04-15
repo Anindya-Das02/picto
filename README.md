@@ -1,4 +1,4 @@
-# picto
+# Picto
 
 # Contents
 * [Introduction](#introduction)
@@ -37,6 +37,49 @@ The main purpose of this project was to learn ```React JS``` and how it interact
    ```
 
 # Database Schema
+
+**DataBase name:** pictodb  
+ ```
+ pictodb
+   |--users
+   |--post_list
+   |--like_post
+ ```
+<p></p>
+
+**Table:  ```users```**
+
+Column Name   | Type        | Default | Null | Extra  
+--------------|-------------|---------|------|-------|  
+id            | int         |         | _no_ | primary key, auto increment|  
+username      | varchar(50) |         |_no_  |       |  
+userpassword  | varchar(200)|         |_no_  |       |  
+email_id      | varchar(140)|         |_no_  |       |  
+is_active     | int         |   1     |_no_  |       |  
+doj           |date         |         |_no_  |       |  
+profile_pic   |mediumtext   |         |_no_  |       |  
+caption       | varchar(140)|         | yes  |       |  
+
+
+**Table:  ```post_list```**
+Column Name   | Type        | Default | Null | Extra  
+--------------|-------------|---------|------|-------|  
+post_id       | int         |         | _no_ | primary key, auto increment|  
+title         | varchar(80) |         |_no_  |       |  
+user_id       | int         |         |_no_  | foreign key refs, id from users |  
+post_date     | datetime    |         |_no_  |       |  
+pic_src       | mediumtext  |   1     |_no_  |       |  
+caption       | varchar(160)|         |_yes_ |       |  
+likes         | int         |   0     |_no_  |       |  
+
+
+**Table: ```like_list```**
+Column Name   | Type        | Default | Null | Extra  
+--------------|-------------|---------|------|-------|  
+post_id       | int         |         | _no_ |       |  
+posted_by     | int         |         |_no_  |       |  
+liked_by      | int         |         |_no_  |       |
+
 
 # How to Use
 
