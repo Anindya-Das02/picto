@@ -83,5 +83,13 @@ liked_by      | int         |         |_no_  |       |
 
 # How to Use
 
-# Screenshots
+* Clone the projet and save it to your local desktop.
+* Inside the project folder you can see various folders such as _back-end_, _front-end_, etc. Open the ```back-end (php)``` folder and copy-paste the folder ```picto``` to your ```www``` directory if you are using WAMP or to your ```htdocs``` directory if you are using XAMPP.
+* Copy the contents of ```front-end``` folder and paste them in your react application. To create a react app you can use the command ```npx create-react-app your_app_name```.
+* Create the Database and tables according the schema as mentioned above.
+* Open command prompt in your react directory and start the react server by typing ```npm start```.
 
+
+# Screenshots
+![image1](Screenshots/pc1.png) ![image2](Screenshots/pc2.png) ![image3](Screenshots/pc3.png)
+![sh1](Screenshots/sh1.png) ![sh2](Screenshots/sh2.png)
