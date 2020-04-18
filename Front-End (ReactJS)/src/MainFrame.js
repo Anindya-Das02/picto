@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ImageFrame from './ImageFrame';
 import Cookies from 'js-cookie';
+import LoadingBuffer from './LoadingBuffer';
 
 /*
 Get feed from PHP server.
@@ -51,9 +52,7 @@ class MainFrame extends Component {
         }
         else {
             return (
-                <div>
-                    <h3 align='center' style={{ color: 'white' }}>loading...</h3>
-                </div>
+                <LoadingBuffer />
             );
         }
 

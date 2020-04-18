@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Cookies from 'js-cookie';
+import LoadingBuffer from './LoadingBuffer';
 
 class Settings extends Component {
 
@@ -133,9 +134,7 @@ class Settings extends Component {
         }
         else {
             return (
-                <div>
-                    <h3 align='center' style={{ color: 'white' }}>loading...</h3>
-                </div>
+               <LoadingBuffer />
             );
         }
 
