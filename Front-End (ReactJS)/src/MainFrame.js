@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ImageFrame from './ImageFrame';
 import Cookies from 'js-cookie';
 import LoadingBuffer from './LoadingBuffer';
-
+import ad from './ad.png';
 /*
 Get feed from PHP server.
 It has the following structure 
@@ -46,7 +46,17 @@ class MainFrame extends Component {
         if (this.state.isLoaded) {
             return (
                 <div className="mainFrame-content">
-                    {this.state.feed.map((data,index) => <ImageFrame key={index} feed={data} />)}
+                    <div className="row">
+                        <div className="col-sm-7  outer-box1" >
+                            {this.state.feed.map((data, index) => <ImageFrame key={index} feed={data} />)}
+                        </div>
+                        <div className="col-sm-5 outer-box2 adds">
+                            <div className="inner-box2">
+
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             );
         }

@@ -23,7 +23,7 @@ class ImageFrame extends Component {
         // if cookies not set -> do not inc/dec likes 
         if (Object.keys(Cookies.get()).length !== 0) {
             var http = new XMLHttpRequest();
-            
+
             //inc_likes
             // post not liked -> inc the like on post
             //on like btn pressed -> change btn state
@@ -97,23 +97,30 @@ class ImageFrame extends Component {
         }
         else {
             return (
-                <div className="imageframe-content">
-                    <div className="row row-item">
-                        <div className="col-sm-4">
-                            <center>
-                                <img src={this.props.feed.pic_src} style={{ width: '100%' }} />
-                            </center>
+                <div className="inner-box1">
+                    <div className="image-holder">
+                        <center>
+                            <img src={this.props.feed.pic_src} className="img-style" />
+                        </center>
+                    </div>
+                    <div className="caption-box">
+                        <div className="caption-header">
+                            <h2>{this.props.feed.title}</h2>
+                            <p>
+                                <i>by <a href="#">{this.props.feed.posted_by}</a> </i>
+                            </p>
                         </div>
-                        <div className="col-sm-8">
-                            <h3>{this.props.feed.title}</h3>
+                        <div>
                             <table>
                                 <tbody>
                                     <tr>
-                                        <td><button className="btn" onClick={this.recordLike} style={{ backgroundColor: 'transparent' }}> {this.state.isLiked ? <i className="fa fa-thumbs-up" aria-hidden="true" style={{ fontSize: '20px' }}></i> : <i className="fa fa-thumbs-o-up" aria-hidden="true" style={{ fontSize: '20px' }}></i>} </button></td>
+                                        <td><button className="btn" onClick={this.recordLike} style={{ backgroundColor: 'transparent' }}> {this.state.isLiked ? <i className="fa fa-thumbs-up" aria-hidden="true" title="un-like" style={{ fontSize: '20px' }}></i> : <i className="fa fa-thumbs-o-up" title="like" aria-hidden="true" style={{ fontSize: '20px' }}></i>} </button></td>
                                         <td> {this.props.feed.likes} </td>
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+                        <div className="caption-body">
                             {this.props.feed.caption}
                         </div>
                     </div>
