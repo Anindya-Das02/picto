@@ -4,15 +4,15 @@ include("dbconnect.php");
 
 
 if($_GET['login_status']){
-    $stmt = $conn->prepare("SELECT *, (CASE WHEN post_id in (SELECT like_list.post_id from like_list where like_list.liked_by = ?) THEN 1 else 0 end) as like_status from post_list ORDER BY post_date Desc");
-    $stmt->bind_param("i",$_GET['uid']);
+    $stmt = $conn->prepare("SELECT *, (CASE WHEN post_id in (SELECT like_list.post_id from like_list where like_list.liked_by = ?) THEN 1 else 0 end) as like_status from post_list ORDER BY post_date Desc limit ?");
+    $stmt->bind_param("ii",$_GET['uid'],$_GET['cc']);
     $stmt->execute();
 }
 else{
-    $stmt = $conn->prepare("SELECT *, (CASE WHEN post_id in (SELECT like_list.post_id from like_list where like_list.liked_by = -1) THEN 1 else 0 end) as like_status from post_list ORDER BY post_date Desc");
+    $stmt = $conn->prepare("SELECT *, (CASE WHEN post_id in (SELECT like_list.post_id from like_list where like_list.liked_by = -1) THEN 1 else 0 end) as like_status from post_list ORDER BY post_date Desc limit ?");
+    $stmt->bind_param("i",$_GET['cc']);
     $stmt->execute();
 }
-
 
 $result = $stmt->get_result();
 $feed_array = array();
