@@ -91,5 +91,8 @@ liked_by      | int         |         |_no_  |       |
 
 
 # Screenshots
-![image1](Screenshots/pc1.png) ![image2](Screenshots/pc2.png) ![image3](Screenshots/pc3.png)
-![sh1](Screenshots/sh1.png) ![sh2](Screenshots/sh2.png)
+![image1](Screenshots/newpic1.png) ![image2](Screenshots/newpic2.png) ![image3](Screenshots/newpic3.png) ![image4](Screenshots/newpic4.png)
+
+![sh1](Screenshots/nsh_feed.png) ![sh2](Screenshots/nsh_profile.png)
+![image](Screenshots/nsh_settings.png) ![image](Screenshots/nsh_add_new.png)
+![image](Screenshots/nsh_login.png) ![image](Screenshots/nsh_signup.png)
